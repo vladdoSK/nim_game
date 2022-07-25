@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div class="modal_open">
+        <div class="modal_content">
+            <h1>Welcome to our game</h1>
+            <h2>Choose who moves first:</h2>
+            <div class="block_button">
+                <button class="button button--small_btn" onclick="new_game()">You</button>
+                <p>OR</p>
+                <button class="button button--small_btn" onclick="computer_first()">Computer</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrapper">
+
+        <button class="button" onclick="new_game()">New game</button>
+
+        <div class="container">
+            <div class="computer">
+                <div class="computer_back"></div>
+                <h1>Computer</h1>
+                <h2 class="score_computer">Score: 0</h2>
+            </div>
+    
+            <div class="matches_block">
+                <!--<div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>
+                <div class="match" onclick="disappear(this)">
+                    <div class="head_match"></div>
+                    <div class="body_math"></div>
+                </div>-->
+            </div>
+    
+            <div class="player">
+                <div class="player_back active"></div>
+                <h1>You</h1>
+                <h2 class="score_player">Score: 0</h2>
+                <p class="left_move">Left move: 3</p>
+                <p class="warning">You must make a move at least 1 time</p>
+            </div>
+        </div>
+
+        <button class="button" onclick="computer_step()">Finish my move</button>
+
+    </div> 
+
+    <div class="modal_window">
+        <div class="modal_content">
+            <div class="winner">
+                
+            </div>
+            <button class="button" onclick="new_game()">Play again</button>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

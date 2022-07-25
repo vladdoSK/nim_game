@@ -1,0 +1,527 @@
+body,
+html {
+    padding: 0;
+    margin: 0 auto;
+}
+
+body {
+    background: url('./../image/main_back.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.block_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.button {
+    color: #840707;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    margin: 20px;
+    display: block;
+    background-image: linear-gradient(to left, transparent, transparent 50%, rgb(189, 3, 3) 50%, rgb(131, 3, 3));
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    transition: all .25s ease-in;
+    font: bold 15px tahoma;
+    border: 1px solid #b71709;
+}
+
+.button:hover {
+    background-position: 0 0;
+    color: #fff;
+}
+
+.button--small_btn {
+    width: 150px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.matches_block {
+    width: 450px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.block {
+    width: 10px;
+    height: 70px;
+    margin: 35px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.match {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    width: 10px;
+    height: 70px;
+    transition: .9s;
+}
+
+.match.active .body_math {
+    max-height: 0px;
+    box-shadow: 0px 0px 0px 0px transparent;
+    transition: .3s;
+}
+
+.match.active .head_match {
+    max-height: 0px;
+    box-shadow: 0px 0px 0px 0px transparent;
+    transition: .3s;
+}
+
+.match.active {
+    max-height: 0px;
+    transition: .3s;
+}
+
+.head_match {
+    width: 10px;
+    height: 15px;
+    border-radius: 50%;
+    background: linear-gradient(180deg, rgb(184, 3, 3), rgb(165, 46, 46));
+    z-index: 1;
+    box-shadow: 2px -2px 3px 2px rgb(59, 58, 58);
+}
+
+.body_math {
+    width: 7px;
+    height: 60px;
+    background: linear-gradient(rgb(243, 163, 4), rgb(255, 179, 0));
+    position: absolute;
+    top: 10px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 3px 2px rgb(59, 58, 58);
+}
+
+.match:hover {
+    top: -2px;
+    left: -3px;
+}
+
+.match:hover .body_math {
+    width: 9px;
+    height: 63px;
+    transition: .2s;
+}
+
+.match:hover .head_match {
+    width: 13px;
+    height: 17px;
+    transition: .2s;
+}
+
+.player,
+.computer {
+    text-align: center;
+    width: 150px;
+    position: relative;
+    z-index: 2;
+}
+
+.computer {
+    top: -50px;
+}
+
+.player_back,
+.computer_back {
+    width: 150px;
+    height: 120px;
+    background: rgb(152, 150, 150);
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.player_back.active,
+.computer_back.active {
+    background: rgb(230, 211, 5);
+}
+
+.left_move {
+    font-weight: bold;
+}
+
+.warning {
+    color: rgb(227, 7, 7);
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.warning::before {
+    content: "";
+    width: 150px;
+    height: 40px;
+    background: rgb(244, 241, 241);
+    opacity: .5;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.warning.active {
+    visibility: visible;
+}
+
+.modal_window,
+.modal_open {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    z-index: 3;
+}
+
+.modal_open {
+    transform: scale(1);
+}
+
+.modal_open.active {
+    transform: scale(0);
+}
+
+.modal_window.active {
+    transform: scale(1);
+}
+
+.modal_content {
+    width: 800px;
+    height: 400px;
+    background: white;
+    border-radius: 20px;
+
+    background: linear-gradient(to bottom, rgb(116, 3, 3), rgb(245, 138, 138));
+    animation: gradient 5s ease infinite;
+    background-size: 200% 200%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0 50%;
+    }
+
+}
+
+.winner {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.power {
+    width: 50px;
+    height: 80px;
+    margin: 0 20px;
+}
+
+.lose {
+    width: 80px;
+}
+
+
+@media (max-width:700px) {
+
+    .matches_block {
+        width: 300px;
+        height: 350px;
+    }
+
+    .block {
+        width: 7px;
+        height: 55px;
+        margin: 5px 25px;
+    }
+
+    .match {
+        width: 7px;
+        height: 55px;
+    }
+
+    .head_match {
+        width: 7px;
+        height: 11px;
+    }
+
+    .body_math {
+        width: 4px;
+        height: 50px;
+        top: 5px
+    }
+
+    .match:hover .body_math {
+        width: 6px;
+        height: 53px;
+        transition: .2s;
+    }
+
+    .match:hover .head_match {
+        width: 11px;
+        height: 15px;
+        transition: .2s;
+    }
+
+    .player,
+    .computer {
+        text-align: center;
+        width: 100px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .player h1,
+    .computer h1 {
+        font-size: 20px;
+    }
+
+    .player h2,
+    .computer h2 {
+        font-size: 17px;
+    }
+
+    .left_move,
+    .warning {
+        font-size: 12px;
+    }
+
+    .warning{
+        margin-top: 30px;
+    }
+
+    .player_back,
+    .computer_back {
+        content: "";
+        width: 100px;
+    }
+
+    .computer_back {
+        height: 90px;
+    }
+
+    .warning::before {
+        content: "";
+        width: 100px;
+        height: 40px;
+    }
+
+    .modal_content {
+        width: 500px;
+        height: 200px;
+    }
+
+    .winner {
+        margin-bottom: 0px;
+    }
+
+    .winner h1{
+        font-size: 25px;
+    }
+
+    .power {
+        width: 30px;
+        height: 50px;
+        margin: 0 20px;
+    }
+
+    .lose {
+        width: 50px;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .matches_block {
+        width: 300px;
+        height: 350px;
+    }
+
+    .block {
+        width: 7px;
+        height: 55px;
+        margin: 5px 25px;
+    }
+
+    .match {
+        width: 7px;
+        height: 55px;
+    }
+
+    .head_match {
+        width: 7px;
+        height: 11px;
+    }
+
+    .body_math {
+        width: 4px;
+        height: 50px;
+        top: 5px
+    }
+
+    .match:hover .body_math {
+        width: 6px;
+        height: 53px;
+        transition: .2s;
+    }
+
+    .match:hover .head_match {
+        width: 11px;
+        height: 15px;
+        transition: .2s;
+    }
+
+    .player,
+    .computer {
+        text-align: center;
+        width: 80px;
+        position: absolute;
+        z-index: 2;
+    }
+
+    .computer{
+        top:50px;
+        left: 50px;
+    }
+
+    .player{
+        top:50px;
+        left: 260px;
+    }
+
+    .player h1,
+    .computer h1 {
+        font-size: 15px;
+        margin-bottom: -10px;
+    }
+
+    .player h2,
+    .computer h2 {
+        font-size: 15px;
+        margin-bottom: -10px;
+    }
+
+    .left_move,
+    .warning {
+        font-size: 10px;
+    }
+
+    .warning{
+        margin-top: 10px;
+        font-size: 9px;
+        
+    }
+
+    .player_back,
+    .computer_back {
+        width: 80px;
+    }
+
+    .player_back {
+        height: 70px;
+    }
+
+    .computer_back {
+        height: 60px;
+    }
+
+    .warning::before {
+        content: "";
+        width: 80px;
+        height: 23px;
+    }
+
+    .modal_content {
+        width: 300px;
+        height: 150px;
+        padding-top: 15px;
+    }
+
+    .modal_content h1, .modal_content h2{
+        font-size: 20px;
+        margin-bottom: -10px;
+    }
+
+    .modal_content h2{
+        font-size: 18px;
+        margin-bottom: -10px;
+    }
+
+    .modal_content p{
+        font-size: 15px;
+    }
+
+    .button--small_btn {
+        width: 100px;
+        font-size: 10px;
+    }
+
+    .winner {
+        margin-bottom: 0px;
+    }
+
+    .winner h1{
+        font-size: 15px;
+    }
+
+    .power {
+        width: 15px;
+        height: 30px;
+        margin: 0 5px;
+    }
+
+    .lose {
+        width: 30px;
+    }
+
+}
